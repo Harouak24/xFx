@@ -1,5 +1,5 @@
 # xFx Protocol
-The client opens a connection with the server and *informs* the server whether it wants to *download* or *upload* a file using a *header*.
+The client opens a connection with the server and *informs* the server whether it wants to *download* or *upload* a file or *get the list of files* using a *header*.
 
 ## Download
 If the client wants to download a file, then the header will be as the following:
@@ -18,3 +18,9 @@ If the client wants to upload a file, then the header will be as the following:
 - **upload[one space][file name][one space][file size][Line Feed]**
 
 After sending the header, the client shall send the bytes of the file
+
+## Get the list of files
+If the client wants to get the list of files, then the header will be as the following:
+- **get[one space]files[Line Feed]**
+
+After sending the header, the server shall send the file names on ServerShare
